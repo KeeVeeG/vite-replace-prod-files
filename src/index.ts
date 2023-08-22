@@ -2,10 +2,11 @@ import type { PluginOption } from 'vite'
 import path from 'path'
 
 export default (files: string | string[]): PluginOption => {
+  const dir = process.cwd()
   if (!Array.isArray(files)) {
     files = [files]
   }
-  const paths = files.map(file => path.join(__dirname, file))
+  const paths = files.map(file => path.join(dir, file))
   return {
     name: 'vite-replace-prod-files',
     enforce: 'pre',

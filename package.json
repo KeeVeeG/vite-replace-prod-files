@@ -1,0 +1,31 @@
+{
+  "name": "@keeveeg/vite-replace-prod-files",
+  "version": "1.0.3",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "exports": {
+    "import": "./lib/esm/index.js",
+    "require": "./lib/cjs/index.js"
+  },
+  "files": [
+    "lib/**/*",
+    "src/**/*"
+  ],
+  "scripts": {
+    "build": "tsc -p . --outDir lib/esm && tsc -p . --module commonjs --outDir lib/cjs",
+    "format": "prettier --write ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KeeVeeG/vite-replace-prod-files.git"
+  },
+  "keywords": [
+    "vite"
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.5.1",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.9"
+  }
+}
